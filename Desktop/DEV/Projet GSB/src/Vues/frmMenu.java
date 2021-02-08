@@ -74,6 +74,11 @@ public class frmMenu extends javax.swing.JFrame {
                 btnVisiteursParRegionMouseClicked(evt);
             }
         });
+        btnVisiteursParRegion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisiteursParRegionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,6 +140,10 @@ public class frmMenu extends javax.swing.JFrame {
     private void btnVisiteursParRegionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVisiteursParRegionMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVisiteursParRegionMouseClicked
+
+    private void btnVisiteursParRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisiteursParRegionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVisiteursParRegionActionPerformed
 
     /**
      * @param args the command line arguments
