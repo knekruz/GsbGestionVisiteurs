@@ -139,6 +139,8 @@ public class frmMenu extends javax.swing.JFrame {
 
     private void btnVisiteursParRegionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVisiteursParRegionMouseClicked
         // TODO add your handling code here:
+        frmInsererVisiteurRegion frm = new frmInsererVisiteurRegion();
+        frm.setVisible(true);
     }//GEN-LAST:event_btnVisiteursParRegionMouseClicked
 
     private void btnVisiteursParRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisiteursParRegionActionPerformed
