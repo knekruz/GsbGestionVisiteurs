@@ -53,6 +53,17 @@ public class ModelVisiteur extends AbstractTableModel
         }
         fireTableChanged(null);
     }
+    public void loadDatasVisiteurRegions(ArrayList<Visiteurs> lesVisiteurs)
+    {
+        rows = new Vector<>();
+        nomsColonnes = new String[]{"Matricule", "Nom", "Prenom"};
+        for (Visiteurs v : lesVisiteurs)
+        {
+            rows.add(new String[]{String.valueOf(v.getvMat()), String.valueOf(v.getvNom()),
+                v.getvPrenom()});
+        }
+        fireTableChanged(null);
+    }
     
     public void loadDatasStatistiques(ArrayList<Visiteurs> lesVisiteurs)
     {
