@@ -5,6 +5,9 @@
  */
 package Vues;
 
+import Entity.FonctionsMetier;
+import Model.ModelVisiteur;
+
 /**
  *
  * @author kayum
@@ -14,6 +17,9 @@ public class frmInsererVisiteurRegion extends javax.swing.JFrame {
     /**
      * Creates new form frmInsererVisiteurRegion
      */
+    FonctionsMetier fm;
+    ModelVisiteur mdlVisiteur;
+    
     public frmInsererVisiteurRegion() {
         initComponents();
     }
@@ -40,6 +46,11 @@ public class frmInsererVisiteurRegion extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         tblVisiteurs.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -122,6 +133,18 @@ public class frmInsererVisiteurRegion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        
+        fm = new FonctionsMetier();
+        // On crée notre modelJeux
+        mdlVisiteur = new ModelVisiteur();
+        // On charge les données dans le modèle
+        mdlVisiteur.loadDatasVisiteurRegions(fm.getAllVisiteurs());
+        // On met à jour le modèle du JTable
+        tblVisiteurs.setModel(mdlVisiteur);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
