@@ -46,6 +46,12 @@ public class Visiteurs {
         this.pourcentageVisiteurs = pourcentageVisiteur;
     }
 
+    public Visiteurs(int vMat, String vNom, String vPrenom) {
+        this.vMat = vMat;
+        this.vNom = vNom;
+        this.vPrenom = vPrenom;
+    }
+
     
     
     /**
