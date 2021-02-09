@@ -43,6 +43,9 @@ public class frmRegions extends javax.swing.JFrame {
         cboSecteurs = new javax.swing.JComboBox<>();
         txtRegionNom = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        lblSecteur = new javax.swing.JLabel();
+        lblGsb = new javax.swing.JLabel();
+        lblFond = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -50,6 +53,7 @@ public class frmRegions extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(null);
 
         tblRegions.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -66,72 +70,58 @@ public class frmRegions extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblRegions);
 
-        jLabel1.setText("Les Regions");
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(10, 102, 735, 146);
 
-        btnInserer.setText("Inserer");
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Les Regions");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(308, 27, 121, 29);
+
+        btnInserer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn Insérer 2.png"))); // NOI18N
+        btnInserer.setText("INSERER");
         btnInserer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnInsererMouseClicked(evt);
             }
         });
+        getContentPane().add(btnInserer);
+        btnInserer.setBounds(200, 330, 111, 23);
 
-        btnModifier.setText("Modifier");
+        btnModifier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/modifier2.png"))); // NOI18N
+        btnModifier.setText("MODIFIER");
         btnModifier.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnModifierMouseClicked(evt);
             }
         });
+        getContentPane().add(btnModifier);
+        btnModifier.setBounds(390, 330, 110, 23);
+        getContentPane().add(cboSecteurs);
+        cboSecteurs.setBounds(466, 271, 147, 22);
+        getContentPane().add(txtRegionNom);
+        txtRegionNom.setBounds(150, 272, 170, 20);
 
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nom de la Region:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(45, 276, 87, 13);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(246, 246, 246)
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnInserer, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(btnModifier)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtRegionNom, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cboSecteurs, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cboSecteurs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtRegionNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInserer)
-                    .addComponent(btnModifier))
-                .addGap(25, 25, 25))
-        );
+        lblSecteur.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
+        lblSecteur.setForeground(new java.awt.Color(255, 255, 255));
+        lblSecteur.setText("Secteur");
+        getContentPane().add(lblSecteur);
+        lblSecteur.setBounds(388, 276, 60, 13);
+
+        lblGsb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/gsb.png"))); // NOI18N
+        getContentPane().add(lblGsb);
+        lblGsb.setBounds(20, 10, 115, 80);
+
+        lblFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Pour visiteur.jpg"))); // NOI18N
+        getContentPane().add(lblFond);
+        lblFond.setBounds(-7, -1, 760, 390);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -253,6 +243,9 @@ public class frmRegions extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblFond;
+    private javax.swing.JLabel lblGsb;
+    private javax.swing.JLabel lblSecteur;
     private javax.swing.JTable tblRegions;
     private javax.swing.JTextField txtRegionNom;
     // End of variables declaration//GEN-END:variables
