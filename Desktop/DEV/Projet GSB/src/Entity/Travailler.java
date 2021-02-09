@@ -16,11 +16,20 @@ public class Travailler {
     private int vMat, codeRegion;
     private Date dateEmbauche;
     private String role;
+    private Visiteurs visiteur;
     private Region region;
 
     public Travailler(Region region) {
         this.region = region;
     }
+
+    public Travailler(Date dateEmbauche, String role, Visiteurs visiteur, Region region) {
+        this.dateEmbauche = dateEmbauche;
+        this.role = role;
+        this.visiteur = visiteur;
+        this.region = region;
+    }
+    
     
     
 
@@ -57,6 +66,20 @@ public class Travailler {
      */
     public Region getRegion() {
         return region;
+    }
+
+    /**
+     * @return the visiteur
+     */
+    public Visiteurs getVisiteur() {
+        return visiteur;
+    }
+
+    /**
+     * @param visiteur the visiteur to set
+     */
+    public void setVisiteur(Visiteurs visiteur) {
+        this.visiteur = visiteur;
     }
     
     
