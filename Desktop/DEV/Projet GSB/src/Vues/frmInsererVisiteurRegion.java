@@ -236,6 +236,10 @@ public class frmInsererVisiteurRegion extends javax.swing.JFrame {
             int region = fm.getIdRegionByName(cboRegion.getSelectedItem().toString());
             String role = txtRole.getText();
             fm.insertTravailler(mat, dateEmb, region, role);
+            
+            mdlTravailler.loadDatas(fm.getAllTravailleurs());
+            // On met à jour le modèle du JTable
+            tblVisiteursRegion.setModel(mdlTravailler);
         }
             
     }//GEN-LAST:event_btnInsererMouseClicked
