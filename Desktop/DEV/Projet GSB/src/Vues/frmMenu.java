@@ -34,6 +34,8 @@ public class frmMenu extends javax.swing.JFrame {
         btnStatistiques = new javax.swing.JButton();
         btnListerVisiteurs = new javax.swing.JButton();
         btnVisiteursParRegion = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        fond = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -41,6 +43,7 @@ public class frmMenu extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnRegion.setText("Region");
         btnRegion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -48,6 +51,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnRegionMouseClicked(evt);
             }
         });
+        getContentPane().add(btnRegion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 140, 53));
 
         btnStatistiques.setText("Statistiques");
         btnStatistiques.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -60,6 +64,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnStatistiquesActionPerformed(evt);
             }
         });
+        getContentPane().add(btnStatistiques, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 140, 53));
 
         btnListerVisiteurs.setText("Visiteurs");
         btnListerVisiteurs.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -67,6 +72,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnListerVisiteursMouseClicked(evt);
             }
         });
+        getContentPane().add(btnListerVisiteurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 140, 53));
 
         btnVisiteursParRegion.setText("Visiteurs par regions");
         btnVisiteursParRegion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -79,33 +85,13 @@ public class frmMenu extends javax.swing.JFrame {
                 btnVisiteursParRegionActionPerformed(evt);
             }
         });
+        getContentPane().add(btnVisiteursParRegion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 140, 53));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(287, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnRegion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnListerVisiteurs, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnStatistiques, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnVisiteursParRegion))
-                .addGap(70, 70, 70))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
-                .addComponent(btnListerVisiteurs, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnVisiteursParRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnStatistiques, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/gsb.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 120, 90));
+
+        fond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fond Accueil.jpg"))); // NOI18N
+        getContentPane().add(fond, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 1, 780, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -187,5 +173,7 @@ public class frmMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnRegion;
     private javax.swing.JButton btnStatistiques;
     private javax.swing.JButton btnVisiteursParRegion;
+    private javax.swing.JLabel fond;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
