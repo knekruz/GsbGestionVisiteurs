@@ -161,10 +161,7 @@ public class frmStatistiques extends javax.swing.JFrame {
         mdlVisiteur.loadDatasStatistiques(fm.getPourcentageVisiteurs());
         // On met à jour le modèle du JTable
         tblPourcentageVisiteurs.setModel(mdlVisiteur);
-        
-        
-        
-        
+       
         
         lblRegionPlus.setText(fm.getRegionAvecLePlusDeV());
         lblRegionMoins.setText(fm.getRegionAvecLeMoinsDeV());
