@@ -30,6 +30,10 @@ public class Region {
         this.nomRegion = nomRegion;
         this.codeRegion = codeRegion;
     }
+
+    public Region(String nomRegion) {
+        this.nomRegion = nomRegion;
+    }
     
     
 
