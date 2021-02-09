@@ -53,7 +53,6 @@ public class frmRegions extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
-        getContentPane().setLayout(null);
 
         tblRegions.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -70,14 +69,9 @@ public class frmRegions extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblRegions);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 102, 735, 146);
-
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Les Regions");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(308, 27, 121, 29);
 
         btnInserer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn Insérer 2.png"))); // NOI18N
         btnInserer.setText("INSERER");
@@ -86,8 +80,6 @@ public class frmRegions extends javax.swing.JFrame {
                 btnInsererMouseClicked(evt);
             }
         });
-        getContentPane().add(btnInserer);
-        btnInserer.setBounds(200, 330, 111, 23);
 
         btnModifier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/modifier2.png"))); // NOI18N
         btnModifier.setText("MODIFIER");
@@ -96,32 +88,78 @@ public class frmRegions extends javax.swing.JFrame {
                 btnModifierMouseClicked(evt);
             }
         });
-        getContentPane().add(btnModifier);
-        btnModifier.setBounds(390, 330, 110, 23);
-        getContentPane().add(cboSecteurs);
-        cboSecteurs.setBounds(466, 271, 147, 22);
-        getContentPane().add(txtRegionNom);
-        txtRegionNom.setBounds(150, 272, 170, 20);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nom de la Region:");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(45, 276, 87, 13);
 
         lblSecteur.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
         lblSecteur.setForeground(new java.awt.Color(255, 255, 255));
         lblSecteur.setText("Secteur");
-        getContentPane().add(lblSecteur);
-        lblSecteur.setBounds(388, 276, 60, 13);
 
         lblGsb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/gsb.png"))); // NOI18N
-        getContentPane().add(lblGsb);
-        lblGsb.setBounds(20, 10, 115, 80);
 
         lblFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Pour visiteur.jpg"))); // NOI18N
-        getContentPane().add(lblFond);
-        lblFond.setBounds(-7, -1, 760, 390);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(lblGsb)
+                .addGap(173, 173, 173)
+                .addComponent(jLabel1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(txtRegionNom, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(lblSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(btnInserer, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79)
+                .addComponent(btnModifier, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(473, 473, 473)
+                .addComponent(cboSecteurs, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(lblFond, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblGsb, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel1)))
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtRegionNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(lblSecteur)))
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnInserer)
+                    .addComponent(btnModifier)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(272, 272, 272)
+                .addComponent(cboSecteurs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(277, 277, 277)
+                .addComponent(jLabel2))
+            .addComponent(lblFond, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
