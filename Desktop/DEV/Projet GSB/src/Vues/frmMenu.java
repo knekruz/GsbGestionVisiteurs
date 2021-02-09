@@ -51,7 +51,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnRegionMouseClicked(evt);
             }
         });
-        getContentPane().add(btnRegion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 140, 53));
+        getContentPane().add(btnRegion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 180, 53));
 
         btnStatistiques.setText("Statistiques");
         btnStatistiques.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -64,7 +64,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnStatistiquesActionPerformed(evt);
             }
         });
-        getContentPane().add(btnStatistiques, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 140, 53));
+        getContentPane().add(btnStatistiques, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 180, 53));
 
         btnListerVisiteurs.setText("Visiteurs");
         btnListerVisiteurs.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -72,7 +72,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnListerVisiteursMouseClicked(evt);
             }
         });
-        getContentPane().add(btnListerVisiteurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 140, 53));
+        getContentPane().add(btnListerVisiteurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 180, 53));
 
         btnVisiteursParRegion.setText("Visiteurs par regions");
         btnVisiteursParRegion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -85,7 +85,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnVisiteursParRegionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnVisiteursParRegion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 140, 53));
+        getContentPane().add(btnVisiteursParRegion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 180, 53));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/gsb.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 120, 90));

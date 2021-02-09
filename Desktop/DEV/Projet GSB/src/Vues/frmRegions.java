@@ -217,7 +217,13 @@ public class frmRegions extends javax.swing.JFrame {
 
     private void btnModifierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModifierMouseClicked
         // TODO add your handling code here:
-        if(txtRegionNom.getText().compareTo("") == 0)
+       if(tblRegions.getSelectedRowCount() == 0)
+        {
+         JOptionPane.showMessageDialog(null,
+                    "Veuillez sélectionner une région", "Erreur de saisie",
+                    JOptionPane.ERROR_MESSAGE);   
+        }
+       else if(txtRegionNom.getText().compareTo("") == 0)
         {
             // On affiche un message
             JOptionPane.showMessageDialog(null,
