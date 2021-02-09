@@ -75,6 +75,7 @@ public class frmListerVisiteurs extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblVisiteurs.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -91,43 +92,60 @@ public class frmListerVisiteurs extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblVisiteurs);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 97, 780, 160));
+        getContentPane().add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 315, 134, -1));
+
         jLabel1.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nom");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 319, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Prenom");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 357, -1, -1));
+        getContentPane().add(txtPrenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 353, 134, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Adresse ");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 388, -1, -1));
+        getContentPane().add(txtAdresse, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 384, 134, -1));
 
         txtCp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCpActionPerformed(evt);
             }
         });
+        getContentPane().add(txtCp, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 419, 134, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Code postal");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 423, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ville");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 314, -1, -1));
+        getContentPane().add(txtVille, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 310, 200, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Date Embauche");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 352, -1, -1));
+        getContentPane().add(cboLabo, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 383, 200, -1));
+        getContentPane().add(cboSecteur, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 416, 200, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Labo");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 388, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Secteur");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 419, -1, -1));
 
         btnInserer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn Insérer 2.png"))); // NOI18N
         btnInserer.setText("INSERER");
@@ -136,6 +154,7 @@ public class frmListerVisiteurs extends javax.swing.JFrame {
                 btnInsererMouseClicked(evt);
             }
         });
+        getContentPane().add(btnInserer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 110, -1));
 
         btnModifier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/modifier2.png"))); // NOI18N
         btnModifier.setText("MODIFIER");
@@ -144,6 +163,12 @@ public class frmListerVisiteurs extends javax.swing.JFrame {
                 btnModifierMouseClicked(evt);
             }
         });
+        btnModifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifierActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnModifier, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 110, -1));
 
         btnRaz.setText("RAZ");
         btnRaz.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -151,152 +176,22 @@ public class frmListerVisiteurs extends javax.swing.JFrame {
                 btnRazMouseClicked(evt);
             }
         });
+        getContentPane().add(btnRaz, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 270, 100, -1));
 
         txtDate.setDateFormatString("yyyy-MM-dd");
+        getContentPane().add(txtDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 348, 200, 24));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Liste des visiteurs");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, -1, 34));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 24, -1, -1));
 
         lblGsb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/gsb.png"))); // NOI18N
+        getContentPane().add(lblGsb, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         lblFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Pour visiteur.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel10)
-                .addGap(10, 10, 10)
-                .addComponent(lblGsb)
-                .addGap(125, 125, 125)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnInserer, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModifier, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(btnRaz, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(155, 155, 155)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
-                .addComponent(txtVille, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel2)
-                .addGap(317, 317, 317)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(364, 364, 364)
-                .addComponent(jLabel7))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(txtCp, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(159, 159, 159)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addComponent(cboSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(txtPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(456, 456, 456)
-                .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(456, 456, 456)
-                .addComponent(cboLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(txtAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(lblFond, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel10))
-                    .addComponent(lblGsb)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(btnInserer)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnModifier)
-                        .addGap(22, 22, 22)
-                        .addComponent(btnRaz)))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel5))
-                    .addComponent(txtVille, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel2))
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7)
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cboSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8)))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(353, 353, 353)
-                .addComponent(txtPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(423, 423, 423)
-                .addComponent(jLabel4))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(348, 348, 348)
-                .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(388, 388, 388)
-                .addComponent(jLabel3))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(383, 383, 383)
-                .addComponent(cboLabo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(384, 384, 384)
-                .addComponent(txtAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(lblFond, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(lblFond, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -423,7 +318,13 @@ public class frmListerVisiteurs extends javax.swing.JFrame {
 
     private void btnModifierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModifierMouseClicked
         // TODO add your handling code here:
-        if(txtNom.getText().compareTo("") == 0)
+        if(tblVisiteurs.getSelectedRowCount() == 0)
+        {
+         JOptionPane.showMessageDialog(null,
+                    "Veuillez sélectionner un visiteur", "Erreur de saisie",
+                    JOptionPane.ERROR_MESSAGE);   
+        }
+        else if(txtNom.getText().compareTo("") == 0)
         {
             // On affiche un message
             JOptionPane.showMessageDialog(null,
@@ -508,6 +409,10 @@ public class frmListerVisiteurs extends javax.swing.JFrame {
     private void txtCpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCpActionPerformed
+
+    private void btnModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnModifierActionPerformed
 
     /**
      * @param args the command line arguments
