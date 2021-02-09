@@ -200,11 +200,43 @@ public class FonctionsMetier implements IMetier
         }
     }
     
+    @Override
+    public void insertTravailler(int idMat, String date, int idRegion, String role) {
+        try {
+            Connection cnx = ConnexionBDD.getCnx();
+            PreparedStatement ps = cnx.prepareStatement("insert into travailler (vmat, date, coderegion,role) values (?,?,?,?)");
+            ps.setInt(1, idMat);
+            ps.setString(2, date);
+            ps.setInt(3, idRegion);
+            ps.setString(4, role);
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public int getIdLaboByName(String name){
         int laboId = 0;
         try {
             Connection cnx = ConnexionBDD.getCnx();
             PreparedStatement ps = cnx.prepareStatement("select codelabo from labo where nomlabo = ?");
+            ps.setString(1, name);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            laboId = rs.getInt(1);
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return laboId;
+    }
+    
+    public int getIdRegionByName(String name){
+        int laboId = 0;
+        try {
+            Connection cnx = ConnexionBDD.getCnx();
+            PreparedStatement ps = cnx.prepareStatement("select coderegion from region where nomregion = ?");
             ps.setString(1, name);
             ResultSet rs = ps.executeQuery();
             rs.next();
@@ -299,6 +331,31 @@ public class FonctionsMetier implements IMetier
         }
         return region;
     
+    }
+
+    @Override
+    public ArrayList<Travailler> getAllTravailleurs() {
+        
+        ArrayList<Travailler> lesTravailleurs = new ArrayList<>();
+        try {
+            Connection cnx = ConnexionBDD.getCnx();
+            PreparedStatement ps = cnx.prepareStatement("SELECT v.vmat, vnom, vprenom, t.date, r.nomregion, role "
+                    + "FROM region r, travailler t, visiteur v "
+                    + "WHERE v.vmat = t.vmat "
+                    + "AND t.coderegion = r.coderegion");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next())
+            {
+                Visiteurs v = new Visiteurs(rs.getInt(1),rs.getString(2),rs.getString(3));
+                Region r = new Region(rs.getString(5));
+                Travailler t = new Travailler(rs.getDate(4), rs.getString(6), v, r);
+                lesTravailleurs.add(t);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lesTravailleurs;
     }
 
     
