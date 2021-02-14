@@ -45,7 +45,7 @@ public class frmMenu extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnRegion.setText("Region");
+        btnRegion.setText("Regions");
         btnRegion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRegionMouseClicked(evt);

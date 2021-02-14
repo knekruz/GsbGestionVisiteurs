@@ -45,7 +45,7 @@ public class ModelVisiteur extends AbstractTableModel
     public void loadDatasVisiteur(ArrayList<Visiteurs> lesVisiteurs)
     {
         rows = new Vector<>();
-        nomsColonnes = new String[]{"Matricule", "Nom", "Prenom", "Adresse", "Code Postal", "Ville", "Date d'Embauche", "Labo", "Secteur"};
+        nomsColonnes = new String[]{"Matricule", "Nom", "Prénom", "Adresse", "Code Postal", "Ville", "Date d'embauche", "Laboratoire", "Secteur"};
         for (Visiteurs v : lesVisiteurs)
         {
             rows.add(new String[]{String.valueOf(v.getvMat()), String.valueOf(v.getvNom()),
@@ -56,7 +56,7 @@ public class ModelVisiteur extends AbstractTableModel
     public void loadDatasVisiteurRegions(ArrayList<Visiteurs> lesVisiteurs)
     {
         rows = new Vector<>();
-        nomsColonnes = new String[]{"Matricule", "Nom", "Prenom"};
+        nomsColonnes = new String[]{"Matricule", "Nom", "Prénom"};
         for (Visiteurs v : lesVisiteurs)
         {
             rows.add(new String[]{String.valueOf(v.getvMat()), String.valueOf(v.getvNom()),

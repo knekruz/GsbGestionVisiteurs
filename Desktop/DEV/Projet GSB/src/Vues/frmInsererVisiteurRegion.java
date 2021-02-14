@@ -94,7 +94,7 @@ public class frmInsererVisiteurRegion extends javax.swing.JFrame {
 
         jLabel3.setText("Date");
 
-        jLabel4.setText("Regions");
+        jLabel4.setText("Régions");
 
         btnInserer.setText("Inserer");
         btnInserer.addMouseListener(new java.awt.event.MouseAdapter() {

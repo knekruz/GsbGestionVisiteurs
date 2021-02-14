@@ -95,18 +95,18 @@ public class frmListerVisiteurs extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 97, 780, 160));
         getContentPane().add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 315, 134, -1));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nom");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 319, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Prenom");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 357, -1, -1));
+        jLabel2.setText("Prénom");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 357, -1, 10));
         getContentPane().add(txtPrenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 353, 134, -1));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Adresse ");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 388, -1, -1));
@@ -119,30 +119,30 @@ public class frmListerVisiteurs extends javax.swing.JFrame {
         });
         getContentPane().add(txtCp, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 419, 134, -1));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Code postal");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 423, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ville");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 314, -1, -1));
         getContentPane().add(txtVille, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 310, 200, -1));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Date Embauche");
+        jLabel6.setText("Date d'embauche");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 352, -1, -1));
         getContentPane().add(cboLabo, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 383, 200, -1));
         getContentPane().add(cboSecteur, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 416, 200, -1));
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Labo");
+        jLabel7.setText("Laboratoire");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 388, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Secteur");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 419, -1, -1));

@@ -28,7 +28,7 @@ public class FonctionsMetier implements IMetier
             Connection cnx = ConnexionBDD.getCnx();
             PreparedStatement ps = cnx.prepareStatement("select  vnom, vprenom, vadresse, vcp, vville, vdatemb, "
                     + "nomlabo, libsecteur, vmat from visiteur v, labo l, secteur s where l.codelabo = v.codelabo "
-                    + "and s.codesecteur = v.codesecteur");
+                    + "and s.codesecteur = v.codesecteur order by (vmat) ASC");
             ResultSet rs = ps.executeQuery();
             while (rs.next())
             {
@@ -342,7 +342,7 @@ public class FonctionsMetier implements IMetier
             PreparedStatement ps = cnx.prepareStatement("SELECT v.vmat, vnom, vprenom, t.date, r.nomregion, role "
                     + "FROM region r, travailler t, visiteur v "
                     + "WHERE v.vmat = t.vmat "
-                    + "AND t.coderegion = r.coderegion");
+                    + "AND t.coderegion = r.coderegion order by (vmat) ASC");
             ResultSet rs = ps.executeQuery();
             while (rs.next())
             {

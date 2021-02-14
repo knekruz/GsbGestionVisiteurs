@@ -57,7 +57,7 @@ public class ModelRegion extends AbstractTableModel
     public void loadDatasRegion(ArrayList<Region> lesRegions)
     {
         rows = new Vector<>();
-        nomsColonnes = new String[]{"Numero region", "Nom de la Region", "Nom du Secteur"};
+        nomsColonnes = new String[]{"Numéro region", "Nom de la région", "Nom du Secteur"};
         for (Region r : lesRegions)
         {
             rows.add(new String[]{String.valueOf(r.getCodeRegion()),r.getNomRegion(), r.getSecteur().getNomSecteur()});
