@@ -5,7 +5,7 @@
  */
 package Vues;
 
-import Entity.FonctionsMetier;
+import Tools.FonctionsMetier;
 import Entity.Region;
 import Entity.Secteur;
 import Model.ModelRegion;

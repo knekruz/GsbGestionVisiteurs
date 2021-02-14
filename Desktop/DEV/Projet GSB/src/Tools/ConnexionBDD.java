@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entity;
+package Tools;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -30,7 +30,7 @@ public class ConnexionBDD
             Class.forName(pilote);
             // L'objet connexion à la BDD avec le nom de la base, le user et le password
             cnx = DriverManager.getConnection("jdbc:mysql://localhost/gestionvisiteursjava?serverTimezone="
-                    + TimeZone.getDefault().getID(), "root", "");
+                    + TimeZone.getDefault().getID(), "root", "root");
         }
         catch (ClassNotFoundException ex)
         {

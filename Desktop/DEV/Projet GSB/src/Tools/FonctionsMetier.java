@@ -3,8 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entity;
+package Tools;
 
+import Entity.Labo;
+import Entity.Labo;
+import Entity.Region;
+import Entity.Region;
+import Entity.Secteur;
+import Entity.Secteur;
+import Entity.Travailler;
+import Entity.Travailler;
+import Entity.Visiteurs;
+import Entity.Visiteurs;
+import Tools.IMetier;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

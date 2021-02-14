@@ -30,7 +30,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnRegion">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Regions"/>
+        <Property name="text" type="java.lang.String" value="R&#xe9;gions"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnRegionMouseClicked"/>
@@ -70,7 +70,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnVisiteursParRegion">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Visiteurs par regions"/>
+        <Property name="text" type="java.lang.String" value="Visiteurs par r&#xe9;gions"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnVisiteursParRegionMouseClicked"/>

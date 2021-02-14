@@ -5,7 +5,7 @@
  */
 package Vues;
 
-import Entity.FonctionsMetier;
+import Tools.FonctionsMetier;
 import Entity.Labo;
 import Entity.Secteur;
 import Entity.Visiteurs;
@@ -148,7 +148,7 @@ public class frmListerVisiteurs extends javax.swing.JFrame {
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 419, -1, -1));
 
         btnInserer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btn Insérer 2.png"))); // NOI18N
-        btnInserer.setText("INSERER");
+        btnInserer.setText("INSÉRER");
         btnInserer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnInsererMouseClicked(evt);

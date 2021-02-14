@@ -3,8 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entity;
+package Tools;
 
+import Entity.Labo;
+import Entity.Region;
+import Entity.Secteur;
+import Entity.Travailler;
+import Entity.Visiteurs;
 import java.util.ArrayList;
 
 /**

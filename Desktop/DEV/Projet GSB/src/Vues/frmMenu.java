@@ -5,7 +5,7 @@
  */
 package Vues;
 
-import Entity.ConnexionBDD;
+import Tools.ConnexionBDD;
 
 /**
  *
@@ -45,7 +45,7 @@ public class frmMenu extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnRegion.setText("Regions");
+        btnRegion.setText("Régions");
         btnRegion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRegionMouseClicked(evt);
@@ -74,7 +74,7 @@ public class frmMenu extends javax.swing.JFrame {
         });
         getContentPane().add(btnListerVisiteurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 180, 53));
 
-        btnVisiteursParRegion.setText("Visiteurs par regions");
+        btnVisiteursParRegion.setText("Visiteurs par régions");
         btnVisiteursParRegion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnVisiteursParRegionMouseClicked(evt);
