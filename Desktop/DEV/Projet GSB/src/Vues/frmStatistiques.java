@@ -5,9 +5,24 @@
  */
 package Vues;
 
+import Entity.Region;
 import Tools.FonctionsMetier;
 import Model.ModelRegion;
 import Model.ModelVisiteur;
+import java.util.ArrayList;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+
+import javax.swing.UIManager;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -44,6 +59,7 @@ public class frmStatistiques extends javax.swing.JFrame {
         lblRegionMoins = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblPourcentageVisiteurs = new javax.swing.JTable();
+        btnStatVisiteur = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -62,6 +78,7 @@ public class frmStatistiques extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblSecteurParRegion);
 
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel1.setText("Nombres de secteurs par region");
 
         jLabel2.setText("La region ou travaille le plus de visiteurs:");
@@ -86,61 +103,73 @@ public class frmStatistiques extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblPourcentageVisiteurs);
 
+        btnStatVisiteur.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        btnStatVisiteur.setText(">> Sous forme graphique");
+        btnStatVisiteur.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnStatVisiteurMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(110, 110, 110))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(174, 174, 174)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRegionPlus)
+                            .addComponent(lblRegionMoins))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(btnStatVisiteur))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(169, 169, 169)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel3))
-                                        .addGap(110, 110, 110))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(lblRegionPlus)
-                                        .addGap(202, 202, 202))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(92, 92, 92)
-                                .addComponent(lblRegionMoins)
-                                .addGap(0, 0, Short.MAX_VALUE))))))
+                                .addGap(10, 10, 10)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel4))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGap(2, 2, 2)
+                .addComponent(jLabel2)
+                .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
                         .addComponent(lblRegionPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel3)
-                        .addGap(27, 27, 27)
-                        .addComponent(lblRegionMoins)))
-                .addGap(27, 27, 27)
-                .addComponent(jLabel4)
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblRegionMoins)
+                        .addGap(40, 40, 40)
+                        .addComponent(btnStatVisiteur)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
@@ -167,6 +196,33 @@ public class frmStatistiques extends javax.swing.JFrame {
         lblRegionMoins.setText(fm.getRegionAvecLeMoinsDeV());
         
     }//GEN-LAST:event_formWindowOpened
+
+    private void btnStatVisiteurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnStatVisiteurMouseClicked
+        // TODO add your handling code here:
+        // Camembert
+        fm = new FonctionsMetier();
+        ArrayList <Region> lesRegionsStats = new ArrayList<>();
+        lesRegionsStats = fm.getAllRegionsParNbSecteur();
+        
+        DefaultPieDataset StatVisiteur = new DefaultPieDataset();
+        for(Region statReg : lesRegionsStats)
+        {
+        StatVisiteur.setValue(statReg.getNomRegion(),statReg.getNbSecteurParRegion());
+            //System.out.println(StatVisiteur);
+        }
+        JFreeChart chart1 = ChartFactory.createPieChart(
+        "Nombre de régions par secteur ",
+        StatVisiteur,
+        true, // légende
+        true, // info bulle
+        false // url
+        );
+        ChartFrame Cardinaliteframe = new ChartFrame("Statistiques", chart1);
+        Cardinaliteframe.setSize(350, 350);
+        Cardinaliteframe.setVisible(true);
+        //Cardinaliteframe.pack();
+        Cardinaliteframe.setVisible(true);
+    }//GEN-LAST:event_btnStatVisiteurMouseClicked
 
     /**
      * @param args the command line arguments
@@ -204,6 +260,7 @@ public class frmStatistiques extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnStatVisiteur;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
