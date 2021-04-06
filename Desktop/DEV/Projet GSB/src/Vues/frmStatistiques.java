@@ -6,6 +6,7 @@
 package Vues;
 
 import Entity.Region;
+import Entity.Visiteurs;
 import Tools.FonctionsMetier;
 import Model.ModelRegion;
 import Model.ModelVisiteur;
@@ -49,17 +50,14 @@ public class frmStatistiques extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblSecteurParRegion = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblRegionPlus = new javax.swing.JLabel();
         lblRegionMoins = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tblPourcentageVisiteurs = new javax.swing.JTable();
         btnStatVisiteur = new javax.swing.JButton();
+        btnVisiteursNonResponsables = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -68,24 +66,15 @@ public class frmStatistiques extends javax.swing.JFrame {
             }
         });
 
-        tblSecteurParRegion.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(tblSecteurParRegion);
-
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel1.setText("Nombres de secteurs par region");
+        jLabel1.setText("Nombre de secteurs par region");
 
-        jLabel2.setText("La region ou travaille le plus de visiteurs:");
+        jLabel2.setText("La region où travaille le plus de visiteurs:");
 
-        jLabel3.setText("La region ou travaille le moins de visiteurs:");
+        jLabel3.setText("La region où travaille le moins de visiteurs:");
 
-        jLabel4.setText("Le pourcentage de visiteurs non responsable d'un secteur");
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel4.setText("Le pourcentage de visiteurs non responsables d'un secteur");
 
         lblRegionPlus.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblRegionPlus.setText("jLabel5");
@@ -93,21 +82,19 @@ public class frmStatistiques extends javax.swing.JFrame {
         lblRegionMoins.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblRegionMoins.setText("jLabel5");
 
-        tblPourcentageVisiteurs.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane2.setViewportView(tblPourcentageVisiteurs);
-
         btnStatVisiteur.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        btnStatVisiteur.setText(">> Sous forme graphique");
+        btnStatVisiteur.setText(">> Nombre de secteurs par région");
         btnStatVisiteur.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnStatVisiteurMouseClicked(evt);
+            }
+        });
+
+        btnVisiteursNonResponsables.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        btnVisiteursNonResponsables.setText(">> Visiteurs non responsables");
+        btnVisiteursNonResponsables.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVisiteursNonResponsablesMouseClicked(evt);
             }
         });
 
@@ -116,35 +103,31 @@ public class frmStatistiques extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(110, 110, 110))
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblRegionPlus)
-                            .addComponent(lblRegionMoins))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(btnStatVisiteur)))
+                        .addGap(0, 34, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel1))
+                        .addGap(62, 62, 62)
+                        .addComponent(lblRegionPlus))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(btnStatVisiteur))
+                        .addGap(28, 28, 28)
+                        .addComponent(btnVisiteursNonResponsables))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel4))))
+                        .addGap(70, 70, 70)
+                        .addComponent(lblRegionMoins)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -152,24 +135,21 @@ public class frmStatistiques extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addGap(2, 2, 2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnStatVisiteur)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(btnVisiteursNonResponsables)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel2)
-                .addGap(2, 2, 2)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblRegionPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblRegionMoins)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnStatVisiteur)
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblRegionPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(lblRegionMoins)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -178,19 +158,6 @@ public class frmStatistiques extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         FonctionsMetier fm = new FonctionsMetier();
-        // On crée notre modelJeux
-        mdlRegion = new ModelRegion();
-        // On charge les données dans le modèle
-        mdlRegion.loadDatasStatistiques(fm.getAllRegionsParNbSecteur());
-        // On met à jour le modèle du JTable
-        tblSecteurParRegion.setModel(mdlRegion);
-        // On crée notre modelJeux
-        mdlVisiteur = new ModelVisiteur();
-        // On charge les données dans le modèle
-        mdlVisiteur.loadDatasStatistiques(fm.getPourcentageVisiteurs());
-        // On met à jour le modèle du JTable
-        tblPourcentageVisiteurs.setModel(mdlVisiteur);
-       
         
         lblRegionPlus.setText(fm.getRegionAvecLePlusDeV());
         lblRegionMoins.setText(fm.getRegionAvecLeMoinsDeV());
@@ -211,7 +178,7 @@ public class frmStatistiques extends javax.swing.JFrame {
             //System.out.println(StatVisiteur);
         }
         JFreeChart chart1 = ChartFactory.createPieChart(
-        "Nombre de régions par secteur ",
+        "Nombre de secteurs par region",
         StatVisiteur,
         true, // légende
         true, // info bulle
@@ -223,6 +190,27 @@ public class frmStatistiques extends javax.swing.JFrame {
         //Cardinaliteframe.pack();
         Cardinaliteframe.setVisible(true);
     }//GEN-LAST:event_btnStatVisiteurMouseClicked
+
+    private void btnVisiteursNonResponsablesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVisiteursNonResponsablesMouseClicked
+        // TODO add your handling code here: 
+        fm = new FonctionsMetier();
+        
+        DefaultPieDataset monGraph = new DefaultPieDataset();
+         for (Visiteurs v : fm.getPourcentageVisiteurs())
+        {
+            monGraph.setValue(v.getSecteur().getNomSecteur(),v.getNbVisiteur());
+        }
+        JFreeChart chart1 = ChartFactory.createPieChart(
+        "Nombre de visiteurs non responsables d'un secteur",
+        monGraph,
+        true, // légende
+        true, // info bulle
+        false // url
+        );
+        ChartFrame frame = new ChartFrame("First", chart1);
+        frame.pack();
+        frame.setVisible(true);
+    }//GEN-LAST:event_btnVisiteursNonResponsablesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -261,15 +249,12 @@ public class frmStatistiques extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnStatVisiteur;
+    private javax.swing.JButton btnVisiteursNonResponsables;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblRegionMoins;
     private javax.swing.JLabel lblRegionPlus;
-    private javax.swing.JTable tblPourcentageVisiteurs;
-    private javax.swing.JTable tblSecteurParRegion;
     // End of variables declaration//GEN-END:variables
 }

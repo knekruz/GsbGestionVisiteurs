@@ -222,7 +222,7 @@ public class frmInsererVisiteurRegion extends javax.swing.JFrame {
                     "Veuillez saisir un Role", "Erreur de saisie",
                     JOptionPane.ERROR_MESSAGE);
         }
-        else if(txtDate.getDate().toString().compareTo("") == 0)
+        else if(txtDate.getDate() ==null)
         {
             // On affiche un message
             JOptionPane.showMessageDialog(null,
