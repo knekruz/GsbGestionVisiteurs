@@ -5,15 +5,11 @@
  */
 package Tools;
 
-import Entity.Labo;
+
 import Entity.Labo;
 import Entity.Region;
-import Entity.Region;
-import Entity.Secteur;
 import Entity.Secteur;
 import Entity.Travailler;
-import Entity.Travailler;
-import Entity.Visiteurs;
 import Entity.Visiteurs;
 import Tools.IMetier;
 import java.sql.Connection;
@@ -311,38 +307,44 @@ public class FonctionsMetier implements IMetier
         return lesRegions;
     }
     
-    public String getRegionAvecLePlusDeV(){
+    public ArrayList<Region> getRegionAvecLePlusdeV(){
     
-    String region = "";
+    ArrayList<Region> laRegionAveclePlusdeVisiteur = new ArrayList<>();
         try {
             Connection cnx = ConnexionBDD.getCnx();
-            PreparedStatement ps = cnx.prepareStatement("SELECT r.nomregion, COUNT(*) FROM region r, travailler t WHERE r.coderegion = t.coderegion GROUP BY r.nomregion ORDER BY COUNT(*) DESC LIMIT 1");
+            PreparedStatement ps = cnx.prepareStatement("SELECT r.nomregion, COUNT(*) FROM region r, travailler t WHERE r.coderegion = t.coderegion GROUP BY r.nomregion having count(*) >= ALL (SELECT COUNT(*) FROM region r, travailler t WHERE r.coderegion = t.coderegion GROUP BY r.nomregion) ");
             ResultSet rs = ps.executeQuery();
-            rs.next();
-            region = rs.getString(1);
+            while (rs.next())
+            {
+                Region r = new Region(rs.getString(1));
+                laRegionAveclePlusdeVisiteur.add(r);
+            }
             ps.close();
         } catch (SQLException ex) {
             Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return region;
+        return laRegionAveclePlusdeVisiteur;
     }
     
-    public String getRegionAvecLeMoinsDeV(){
+    public ArrayList<Region> getRegionAvecLeMoinsDeV(){
     
-    String region = "";
+    ArrayList<Region> laRegionAvecleMoinsdeVisiteur = new ArrayList<>();
         try {
             Connection cnx = ConnexionBDD.getCnx();
-            PreparedStatement ps = cnx.prepareStatement("SELECT r.nomregion, COUNT(*) FROM region r, travailler t WHERE r.coderegion = t.coderegion GROUP BY r.nomregion ORDER BY COUNT(*) LIMIT 1");
+            PreparedStatement ps = cnx.prepareStatement("SELECT r.nomregion, COUNT(*) FROM region r, travailler t WHERE r.coderegion = t.coderegion GROUP BY r.nomregion having count(*) <= ALL (SELECT COUNT(*) FROM region r, travailler t WHERE r.coderegion = t.coderegion GROUP BY r.nomregion) ");
             ResultSet rs = ps.executeQuery();
-            rs.next();
-            region = rs.getString(1);
+            while (rs.next())
+            {
+                Region r = new Region(rs.getString(1));
+                laRegionAvecleMoinsdeVisiteur.add(r);
+            }
             ps.close();
         } catch (SQLException ex) {
             Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return region;
-    
+        return laRegionAvecleMoinsdeVisiteur;
     }
+    
 
     @Override
     public ArrayList<Travailler> getAllTravailleurs() {
