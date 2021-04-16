@@ -307,12 +307,22 @@ public class FonctionsMetier implements IMetier
         return lesRegions;
     }
     
-    public ArrayList<Region> getRegionAvecLePlusdeV(){
+    public ArrayList<Region> getRegionAvecLePlusdeV(){ 
     
     ArrayList<Region> laRegionAveclePlusdeVisiteur = new ArrayList<>();
         try {
             Connection cnx = ConnexionBDD.getCnx();
-            PreparedStatement ps = cnx.prepareStatement("SELECT r.nomregion, COUNT(*) FROM region r, travailler t WHERE r.coderegion = t.coderegion GROUP BY r.nomregion having count(*) >= ALL (SELECT COUNT(*) FROM region r, travailler t WHERE r.coderegion = t.coderegion GROUP BY r.nomregion) ");
+            PreparedStatement ps = cnx.prepareStatement("SELECT r.nomregion, COUNT(*) \n" +
+"FROM region r, travailler t \n" +
+"WHERE r.coderegion = t.coderegion \n" +
+"GROUP BY r.nomregion \n" +
+"having count(*) = (SELECT MAX(nb) \n" +
+"                    FROM    (select region.nomregion, count(*) as nb\n" +
+"                             from region ,travailler \n" +
+"                             WHERE region.coderegion = travailler.coderegion \n" +
+"                             GROUP BY region.nomregion\n" +
+"                             ) as temp \n" +
+"                             )");
             ResultSet rs = ps.executeQuery();
             while (rs.next())
             {
@@ -331,7 +341,17 @@ public class FonctionsMetier implements IMetier
     ArrayList<Region> laRegionAvecleMoinsdeVisiteur = new ArrayList<>();
         try {
             Connection cnx = ConnexionBDD.getCnx();
-            PreparedStatement ps = cnx.prepareStatement("SELECT r.nomregion, COUNT(*) FROM region r, travailler t WHERE r.coderegion = t.coderegion GROUP BY r.nomregion having count(*) <= ALL (SELECT COUNT(*) FROM region r, travailler t WHERE r.coderegion = t.coderegion GROUP BY r.nomregion) ");
+            PreparedStatement ps = cnx.prepareStatement("SELECT r.nomregion, COUNT(*) \n" +
+"FROM region r, travailler t \n" +
+"WHERE r.coderegion = t.coderegion \n" +
+"GROUP BY r.nomregion \n" +
+"having count(*) = (SELECT MIN(nb) \n" +
+"                    FROM    (select region.nomregion, count(*) as nb\n" +
+"                             from region ,travailler \n" +
+"                             WHERE region.coderegion = travailler.coderegion \n" +
+"                             GROUP BY region.nomregion\n" +
+"                             ) as temp \n" +
+"                             )");
             ResultSet rs = ps.executeQuery();
             while (rs.next())
             {
