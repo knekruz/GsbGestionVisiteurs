@@ -318,7 +318,7 @@ public class FonctionsMetier implements IMetier
 "GROUP BY r.nomregion \n" +
 "having count(*) = (SELECT MAX(nb) \n" +
 "                    FROM    (select region.nomregion, count(*) as nb\n" +
-"                             from region ,travailler \n" +
+"                             from region,travailler \n" +
 "                             WHERE region.coderegion = travailler.coderegion \n" +
 "                             GROUP BY region.nomregion\n" +
 "                             ) as temp \n" +
