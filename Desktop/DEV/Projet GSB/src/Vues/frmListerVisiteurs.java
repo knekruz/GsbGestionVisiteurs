@@ -256,7 +256,8 @@ public class frmListerVisiteurs extends javax.swing.JFrame {
          
             Visiteurs unVisiteur = new Visiteurs(nom,
             prenom, adresse, cp, ville, dateEmb);
-            // Insertion en BB du nouveau jeu
+            
+            // Insertion en BDD du nouveau visiteur
             fm.insertVisiteur(unVisiteur, labo, secteur);
             // On recharge le modèle car il y a un nouveau jeu
             mdlVisiteur.loadDatasVisiteur(fm.getAllVisiteurs());
@@ -269,7 +270,7 @@ public class frmListerVisiteurs extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         fm = new FonctionsMetier();
-        // On crée notre modelJeux
+        // On crée notre modelVisiteur
         mdlVisiteur = new ModelVisiteur();
         // On charge les données dans le modèle
         mdlVisiteur.loadDatasVisiteur(fm.getAllVisiteurs());

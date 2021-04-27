@@ -144,8 +144,8 @@ public class frmRegions extends javax.swing.JFrame {
         }
         else 
         {
-            String nom = txtRegionNom.getText();
-            int id = fm.getLastIdRegion();
+            String nom = txtRegionNom.getText(); // On recupere le nom 
+            int id = fm.getLastIdRegion();  //id + 1
             int secteur = fm.getIdSecteurByName(cboSecteurs.getSelectedItem().toString());
 
             Region region = new Region(id,nom);

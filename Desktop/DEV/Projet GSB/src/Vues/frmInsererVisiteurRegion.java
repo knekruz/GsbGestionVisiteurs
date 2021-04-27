@@ -182,16 +182,16 @@ public class frmInsererVisiteurRegion extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         fm = new FonctionsMetier();
-        // On crée notre modelJeux
+        // On crée notre modelVisisteur
         mdlVisiteur = new ModelVisiteur();
         // On charge les données dans le modèle
-        mdlVisiteur.loadDatasVisiteurRegions(fm.getAllVisiteurs());
+        mdlVisiteur.loadDatasVisiteurRegions(fm.getAllVisiteurs()); // 1er JTable
         // On met à jour le modèle du JTable
         tblVisiteurs.setModel(mdlVisiteur);
         
         mdlTravailler = new ModelTravailler();
         // On charge les données dans le modèle
-        mdlTravailler.loadDatas(fm.getAllTravailleurs());
+        mdlTravailler.loadDatas(fm.getAllTravailleurs());// 2ème JTable
         // On met à jour le modèle du JTable
         tblVisiteursRegion.setModel(mdlTravailler);
         
@@ -237,7 +237,7 @@ public class frmInsererVisiteurRegion extends javax.swing.JFrame {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); 
             String dateEmb = format.format( txtDate.getDate() );
             
-            int region = fm.getIdRegionByName(cboRegion.getSelectedItem().toString());
+            int region = fm.getIdRegionByName(cboRegion.getSelectedItem().toString()); // On recuper l'id de la region
             String role = txtRole.getText();
             fm.insertTravailler(mat, dateEmb, region, role);
             
